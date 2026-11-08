@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faecc1"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8c6a1e"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="#0a0d14"/>
+  <rect x="5" y="5" width="90" height="90" rx="16" fill="none" stroke="url(#gold)" stroke-width="2"/>
+  <path d="M50 15 L78 30 L78 62 C78 78 50 87 50 87 C50 87 22 78 22 62 L22 30 Z" fill="#121722" stroke="url(#gold)" stroke-width="2" />
+  <path d="M38 42 L44 48 L50 38 L56 48 L62 42 L60 56 L40 56 Z" fill="url(#gold)" />
+  <text x="50" y="73" font-family="serif" font-weight="bold" font-size="14" fill="url(#gold)" text-anchor="middle" letter-spacing="1">GLS</text>
+</svg>

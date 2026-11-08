@@ -1,0 +1,16 @@
+{
+  "short_name": "Guru Lights",
+  "name": "Guru Lights and Sounds - Event Services",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#07090e",
+  "theme_color": "#0a0d14",
+  "display": "standalone"
+}
+

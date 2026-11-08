@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#182030"/>
+      <stop offset="40%" stop-color="#0f1420"/>
+      <stop offset="100%" stop-color="#080a10"/>
+    </linearGradient>
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faecc1"/>
+      <stop offset="35%" stop-color="#d4af37"/>
+      <stop offset="70%" stop-color="#946f20"/>
+      <stop offset="100%" stop-color="#dfb753"/>
+    </linearGradient>
+    <linearGradient id="silhouetteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a354c"/>
+      <stop offset="50%" stop-color="#1b2333"/>
+      <stop offset="100%" stop-color="#101520"/>
+    </linearGradient>
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="600" height="800" fill="url(#bgGrad)"/>
+
+  <!-- Subtle Radial Glow in Center -->
+  <circle cx="300" cy="350" r="220" fill="#d4af37" opacity="0.06"/>
+
+  <!-- Geometric Luxury Border -->
+  <rect x="24" y="24" width="552" height="752" rx="12" fill="none" stroke="url(#goldBorder)" stroke-width="2.5" opacity="0.9"/>
+  <rect x="36" y="36" width="528" height="728" rx="8" fill="none" stroke="url(#goldBorder)" stroke-width="1" stroke-dasharray="6 4" opacity="0.45"/>
+
+  <!-- Corner Flourishes -->
+  <g stroke="url(#goldBorder)" stroke-width="2" fill="none">
+    <!-- Top Left -->
+    <path d="M20 50 L50 20 M20 20 L20 40 M20 20 L40 20" />
+    <!-- Top Right -->
+    <path d="M580 50 L550 20 M580 20 L580 40 M580 20 L560 20" />
+    <!-- Bottom Left -->
+    <path d="M20 750 L50 780 M20 780 L20 760 M20 780 L40 780" />
+    <!-- Bottom Right -->
+    <path d="M580 750 L550 780 M580 780 L580 760 M580 780 L560 780" />
+  </g>
+
+  <!-- Elegant Professional Silhouette -->
+  <g transform="translate(300, 360)">
+    <!-- Halo glow -->
+    <circle cx="0" cy="-110" r="85" fill="#d4af37" opacity="0.08"/>
+    
+    <!-- Head -->
+    <circle cx="0" cy="-110" r="68" fill="url(#silhouetteGrad)" stroke="url(#goldBorder)" stroke-width="2" stroke-opacity="0.5"/>
+    
+    <!-- Neck -->
+    <path d="M-22 -44 L22 -44 L28 10 L-28 10 Z" fill="url(#silhouetteGrad)"/>
+
+    <!-- Shoulders & Torso (Formal Suit Composition) -->
+    <path d="M-190 270 C-180 140 -120 40 -35 15 L0 60 L35 15 C120 40 180 140 190 270 Z" 
+          fill="url(#silhouetteGrad)" stroke="url(#goldBorder)" stroke-width="2" stroke-opacity="0.4"/>
+    
+    <!-- Lapels and Tie / Collar Lines -->
+    <path d="M-35 15 L-12 110 L0 140 L12 110 L35 15" fill="none" stroke="url(#goldBorder)" stroke-width="2" stroke-opacity="0.7"/>
+    <polygon points="0,55 -10,95 0,165 10,95" fill="#d4af37" opacity="0.4"/>
+  </g>
+
+  <!-- Informative, Clean Agency Placeholder Card Overlay -->
+  <g transform="translate(60, 610)">
+    <rect width="480" height="130" rx="10" fill="#0d111a" fill-opacity="0.94" stroke="url(#goldBorder)" stroke-width="1.5"/>
+    
+    <g transform="translate(240, 32)">
+      <!-- Badge pill -->
+      <rect x="-135" y="-18" width="270" height="24" rx="12" fill="#d4af37" fill-opacity="0.15" stroke="#d4af37" stroke-width="1"/>
+      <text x="0" y="-2" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="10.5" 
+            fill="#faecc1" text-anchor="middle" letter-spacing="2">PLACEHOLDER FOR OWNER PHOTO</text>
+      
+      <text x="0" y="30" font-family="'Playfair Display', serif" font-weight="700" font-size="18" 
+            fill="#ffffff" text-anchor="middle">Business Owner Photograph</text>
+      
+      <text x="0" y="54" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="11.5" 
+            fill="#94a3b8" text-anchor="middle">Original photo will appear here once provided by the owner.</text>
+      
+      <text x="0" y="74" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="10.5" 
+            fill="#d4af37" text-anchor="middle" letter-spacing="0.5">Editable in: src/config/business.ts &rarr; ownerImage</text>
+    </g>
+  </g>
+</svg>
+
