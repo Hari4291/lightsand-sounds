@@ -67,14 +67,14 @@ export const Gallery: React.FC<GalleryProps> = ({ items }) => {
   return (
     <div>
       {/* Category Filter Tabs */}
-      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
+      <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 mb-8 sm:mb-12">
         {categories.map((cat) => {
           const isSelected = selectedCategory === cat;
           return (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
+              className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
                 isSelected
                   ? 'bg-gold-gradient text-navy-950 font-semibold shadow-md shadow-gold-500/20'
                   : 'bg-navy-900/80 text-slate-300 hover:text-white hover:bg-navy-800 border border-slate-800'
@@ -154,10 +154,10 @@ export const Gallery: React.FC<GalleryProps> = ({ items }) => {
             {/* Top Close Button */}
             <button
               onClick={handleCloseLightbox}
-              className="absolute top-5 right-5 z-50 p-2.5 rounded-full bg-slate-900/80 text-white hover:text-gold-400 hover:bg-slate-800 border border-slate-700 transition-colors"
+              className="absolute top-3 right-3 sm:top-5 sm:right-5 z-50 p-2 sm:p-2.5 rounded-full bg-slate-900/80 text-white hover:text-gold-400 hover:bg-slate-800 border border-slate-700 transition-colors"
               aria-label="Close modal"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             {/* Previous Button */}
@@ -166,10 +166,10 @@ export const Gallery: React.FC<GalleryProps> = ({ items }) => {
                 e.stopPropagation();
                 handlePrev();
               }}
-              className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-slate-900/80 text-white hover:text-gold-400 hover:bg-slate-800 border border-slate-700 transition-colors"
+              className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-50 p-2 sm:p-3 rounded-full bg-slate-900/80 text-white hover:text-gold-400 hover:bg-slate-800 border border-slate-700 transition-colors"
               aria-label="Previous image"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             {/* Next Button */}
@@ -178,22 +178,22 @@ export const Gallery: React.FC<GalleryProps> = ({ items }) => {
                 e.stopPropagation();
                 handleNext();
               }}
-              className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-slate-900/80 text-white hover:text-gold-400 hover:bg-slate-800 border border-slate-700 transition-colors"
+              className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-50 p-2 sm:p-3 rounded-full bg-slate-900/80 text-white hover:text-gold-400 hover:bg-slate-800 border border-slate-700 transition-colors"
               aria-label="Next image"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             {/* Image & Caption Container */}
             <div
-              className="relative max-w-4xl w-full max-h-[85vh] flex flex-col items-center justify-center"
+              className="relative max-w-4xl w-full max-h-[88vh] flex flex-col items-center justify-center px-8 sm:px-12"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative rounded-xl overflow-hidden border border-gold-500/30 max-h-[70vh] bg-navy-950 flex items-center justify-center shadow-2xl">
+              <div className="relative rounded-xl overflow-hidden border border-gold-500/30 max-h-[62vh] sm:max-h-[70vh] bg-navy-950 flex items-center justify-center shadow-2xl">
                 <img
                   src={filteredItems[activeImageIndex].image}
                   alt={filteredItems[activeImageIndex].title}
-                  className="max-h-[70vh] w-auto max-w-full object-contain"
+                  className="max-h-[62vh] sm:max-h-[70vh] w-auto max-w-full object-contain"
                 />
               </div>
 

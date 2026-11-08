@@ -20,14 +20,14 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-28 pb-20 lg:pt-36 lg:pb-28 flex items-center overflow-hidden bg-navy-950"
+      className="relative min-h-screen pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-28 flex items-center overflow-hidden bg-navy-950"
     >
       {/* Cinematic Animated Hero Background Slideshow with Multi-Layered Dark Overlay */}
       <HeroBackgroundSlider />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
         {/* Main 2-Column Desktop Layout: Left = Content, Right = Owner Photo */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* ================= LEFT SIDE: HEADLINE, DESCRIPTION, ACTIONS ================= */}
           <motion.div
@@ -37,13 +37,13 @@ export const HeroSection: React.FC = () => {
             className="lg:col-span-7 flex flex-col justify-center text-left"
           >
             {/* Location Indicator Pill */}
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-navy-900/90 border border-gold-500/30 text-gold-400 text-xs sm:text-sm font-medium w-fit mb-6 shadow-sm shadow-gold-500/10">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-navy-900/90 border border-gold-500/30 text-gold-400 text-xs sm:text-sm font-medium w-fit max-w-full mb-5 sm:mb-6 shadow-sm shadow-gold-500/10">
               <MapPin className="w-3.5 h-3.5 text-gold-400 flex-shrink-0 animate-pulse" />
-              <span>Serving Paluri Vari Palli and nearby areas.</span>
+              <span className="truncate">Serving Paluri Vari Palli and nearby areas.</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15] mb-6">
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.18] sm:leading-[1.15] mb-4 sm:mb-6">
               Making Every Celebration{' '}
               <span className="text-gold-gradient block sm:inline">
                 Unforgettable.
@@ -51,16 +51,16 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mb-8">
+            <p className="text-sm sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mb-6 sm:mb-8">
               {businessConfig.heroDescription}
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 mb-10">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
               <a
                 href="#services"
                 onClick={(e) => handleScrollTo(e, 'services')}
-                className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-full bg-gold-gradient text-navy-950 font-semibold text-sm tracking-wide shadow-lg shadow-gold-500/20 hover:brightness-110 hover:shadow-gold-500/35 transition-all active:scale-95 group"
+                className="inline-flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3.5 rounded-full bg-gold-gradient text-navy-950 font-semibold text-sm tracking-wide shadow-lg shadow-gold-500/20 hover:brightness-110 hover:shadow-gold-500/35 transition-all active:scale-95 group"
               >
                 <span>Explore Our Services</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -70,7 +70,7 @@ export const HeroSection: React.FC = () => {
               <a
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, 'contact')}
-                className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-full border border-gold-500/40 text-slate-100 hover:text-gold-300 hover:border-gold-400 bg-navy-900/60 backdrop-blur-sm text-sm font-semibold tracking-wide transition-all active:scale-95"
+                className="inline-flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3.5 rounded-full border border-gold-500/40 text-slate-100 hover:text-gold-300 hover:border-gold-400 bg-navy-900/60 backdrop-blur-sm text-sm font-semibold tracking-wide transition-all active:scale-95"
               >
                 <Sparkles className="w-4 h-4 text-gold-400" />
                 <span>Contact Us</span>
@@ -80,7 +80,7 @@ export const HeroSection: React.FC = () => {
               {hasPhoneNumber() && phoneUrl && (
                 <a
                   href={phoneUrl}
-                  className="inline-flex items-center space-x-2 px-5 py-3 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-sm font-medium transition-colors border border-slate-700"
+                  className="inline-flex items-center justify-center space-x-2 w-full sm:w-auto px-5 py-3 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-sm font-medium transition-colors border border-slate-700 active:scale-95"
                 >
                   <Phone className="w-4 h-4 text-gold-400" />
                   <span>Call {businessConfig.phoneNumber}</span>
@@ -93,7 +93,7 @@ export const HeroSection: React.FC = () => {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 px-5 py-3 rounded-full bg-emerald-950/60 hover:bg-emerald-900/70 text-emerald-200 text-sm font-medium transition-colors border border-emerald-500/40"
+                  className="inline-flex items-center justify-center space-x-2 w-full sm:w-auto px-5 py-3 rounded-full bg-emerald-950/60 hover:bg-emerald-900/70 text-emerald-200 text-sm font-medium transition-colors border border-emerald-500/40 active:scale-95"
                 >
                   <MessageSquare className="w-4 h-4 text-emerald-400" />
                   <span>WhatsApp Us</span>
@@ -117,7 +117,7 @@ export const HeroSection: React.FC = () => {
                 ].map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 rounded-md bg-navy-900/80 border border-slate-800 text-slate-300"
+                    className="px-2.5 sm:px-3 py-1 rounded-md bg-navy-900/80 border border-slate-800 text-slate-300 text-[11px] sm:text-xs"
                   >
                     &bull; {tag}
                   </span>
@@ -133,7 +133,7 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-none group">
+            <div className="relative w-full max-w-[280px] xs:max-w-xs sm:max-w-sm lg:max-w-none mx-auto group">
               {/* Outer Decorative Glow & Accent Frame */}
               <div className="absolute -inset-1.5 rounded-2xl bg-gradient-to-tr from-gold-600/30 via-gold-400/20 to-gold-700/30 blur-sm opacity-80 group-hover:opacity-100 transition-opacity" />
               

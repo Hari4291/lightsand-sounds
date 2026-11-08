@@ -27,7 +27,7 @@ export const WhatsAppButton: React.FC = () => {
   return (
     <aside
       aria-label="Quick contact links"
-      className="fixed bottom-6 right-5 sm:right-6 z-50 flex flex-col items-end space-y-3 pointer-events-auto"
+      className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end space-y-3 pointer-events-auto"
     >
       {/* 1. FLOATING CALL BUTTON (RIGHT SIDE) */}
       {isPhoneConfigured && phoneUrl && (
@@ -44,11 +44,11 @@ export const WhatsAppButton: React.FC = () => {
             onMouseEnter={() => setHoveredButton('phone')}
             onMouseLeave={() => setHoveredButton(null)}
             aria-label="Call business owner"
-            className="group relative flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gold-gradient text-navy-950 shadow-xl shadow-gold-500/25 hover:shadow-gold-500/45 hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-gold-400/50"
+            className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gold-gradient text-navy-950 shadow-xl shadow-gold-500/25 hover:shadow-gold-500/45 hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-gold-400/50"
           >
             {/* Subtle pulse ring */}
             <span className="absolute -inset-1 rounded-full bg-gold-400 opacity-30 group-hover:animate-ping pointer-events-none" />
-            <Phone className="w-6 h-6 fill-navy-950 group-hover:rotate-12 transition-transform duration-300" />
+            <Phone className="w-5 h-5 sm:w-6 sm:h-6 fill-navy-950 group-hover:rotate-12 transition-transform duration-300" />
           </a>
         </div>
       )}
@@ -70,11 +70,11 @@ export const WhatsAppButton: React.FC = () => {
             onMouseEnter={() => setHoveredButton('whatsapp')}
             onMouseLeave={() => setHoveredButton(null)}
             aria-label="Chat on WhatsApp"
-            className="group relative flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-navy-950 shadow-xl shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-emerald-400/50"
+            className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-navy-950 shadow-xl shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-emerald-400/50"
           >
             {/* Ripple Pulse */}
             <span className="absolute -inset-1 rounded-full bg-emerald-400 opacity-40 animate-ping pointer-events-none" />
-            <MessageSquare className="w-6 h-6 sm:w-7 sm:h-7 fill-navy-950 group-hover:scale-110 transition-transform duration-300" />
+            <MessageSquare className="w-5 h-5 sm:w-7 sm:h-7 fill-navy-950 group-hover:scale-110 transition-transform duration-300" />
           </a>
         </div>
       )}

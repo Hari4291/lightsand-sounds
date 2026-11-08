@@ -269,7 +269,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-4xl px-4 text-center">
 
         {/* 1. Behind-the-Logo Dynamic Audio Equalizer Bars */}
-        <div className="relative w-full max-w-[340px] sm:max-w-[480px] md:max-w-[580px] h-16 sm:h-20 flex items-end justify-center gap-1 sm:gap-1.5 mb-2 overflow-hidden">
+        <div className="relative w-full max-w-[280px] sm:max-w-[480px] md:max-w-[580px] h-14 sm:h-20 flex items-end justify-center gap-1 sm:gap-1.5 mb-2 overflow-hidden">
           {equalizerBars.map((bar) => {
             const isPlaying = phase !== 'awakening' && phase !== 'exit';
             return (
@@ -346,7 +346,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             <img
               src={businessConfig.logo}
               alt="Guru Lights & Sounds"
-              className="w-[280px] sm:w-[380px] md:w-[480px] lg:w-[540px] h-auto object-contain block mx-auto transition-transform duration-700"
+              className="w-[280px] sm:w-[380px] md:w-[480px] lg:w-[540px] max-w-[85vw] h-auto object-contain block mx-auto transition-transform duration-700"
               loading="eager"
             />
 

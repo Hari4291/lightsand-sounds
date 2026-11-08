@@ -79,26 +79,26 @@ export const Navbar: React.FC = () => {
           : 'bg-gradient-to-b from-navy-950/90 via-navy-950/40 to-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand Logo & Name */}
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="flex items-center space-x-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 rounded-lg p-1"
+            className="flex items-center space-x-2.5 sm:space-x-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 rounded-lg p-1 min-w-0"
           >
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg overflow-hidden border border-gold-500/40 bg-black flex items-center justify-center group-hover:border-gold-400 transition-colors">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden border border-gold-500/40 bg-black flex-shrink-0 flex items-center justify-center group-hover:border-gold-400 transition-colors">
               <img
                 src={businessConfig.logo}
                 alt={`${businessConfig.businessName} Logo`}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="flex flex-col">
-              <span className="font-serif font-bold text-lg sm:text-xl text-white tracking-wide group-hover:text-gold-300 transition-colors">
+            <div className="flex flex-col min-w-0 max-w-[150px] min-[360px]:max-w-[190px] min-[400px]:max-w-[240px] sm:max-w-none">
+              <span className="font-serif font-bold text-base min-[360px]:text-lg sm:text-xl text-white tracking-wide truncate group-hover:text-gold-300 transition-colors">
                 {businessConfig.businessName}
               </span>
-              <span className="text-[10px] tracking-widest text-gold-400 font-semibold uppercase">
+              <span className="hidden min-[380px]:block text-[9px] sm:text-[10px] tracking-wider sm:tracking-widest text-gold-400 font-semibold uppercase truncate">
                 Event Services &bull; Paluri Vari Palli
               </span>
             </div>
@@ -129,13 +129,13 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* RIGHT SIDE: Call Icon & WhatsApp Icon Quick Actions */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
+          <div className="flex items-center space-x-1.5 sm:space-x-3 flex-shrink-0">
             {/* Right Side Call Button */}
             {isPhoneConfigured && phoneUrl && (
               <a
                 href={phoneUrl}
                 aria-label="Call business owner"
-                className="inline-flex items-center space-x-1.5 px-3.5 py-2 text-xs uppercase tracking-wider font-semibold rounded-full bg-gold-gradient text-navy-950 hover:brightness-110 transition-all shadow-md shadow-gold-500/20 active:scale-95"
+                className="hidden min-[400px]:inline-flex items-center space-x-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs uppercase tracking-wider font-semibold rounded-full bg-gold-gradient text-navy-950 hover:brightness-110 transition-all shadow-md shadow-gold-500/20 active:scale-95"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">Call</span>
@@ -149,7 +149,7 @@ export const Navbar: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"
-                className="inline-flex items-center space-x-1.5 px-3.5 py-2 text-xs uppercase tracking-wider font-semibold rounded-full bg-emerald-500 hover:bg-emerald-400 text-navy-950 transition-all shadow-md shadow-emerald-500/20 active:scale-95"
+                className="hidden min-[400px]:inline-flex items-center space-x-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs uppercase tracking-wider font-semibold rounded-full bg-emerald-500 hover:bg-emerald-400 text-navy-950 transition-all shadow-md shadow-emerald-500/20 active:scale-95"
               >
                 <MessageSquare className="w-3.5 h-3.5 fill-navy-950" />
                 <span className="hidden sm:inline">WhatsApp</span>
@@ -171,7 +171,7 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               type="button"
-              className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold-400"
+              className="lg:hidden p-2 rounded-lg min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-300 hover:text-white hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-gold-400 active:scale-95 transition-all"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -183,7 +183,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-navy-950/95 backdrop-blur-xl border-b border-gold-500/20 px-4 pt-3 pb-6 animate-fadeIn">
+        <div className="lg:hidden bg-navy-950/98 backdrop-blur-xl border-b border-gold-500/20 px-4 pt-3 pb-6 max-h-[calc(100vh-80px)] overflow-y-auto animate-fadeIn shadow-2xl">
           <div className="flex flex-col space-y-1">
             {navItems.map((item) => {
               const isActive = activeSection === item.sectionId;
@@ -195,7 +195,7 @@ export const Navbar: React.FC = () => {
                   className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                     isActive
                       ? 'bg-gold-500/15 text-gold-400 font-semibold border-l-2 border-gold-400'
-                      : 'text-slate-300 hover:text-white hover:bg-white/5'
+                      : 'text-slate-300 hover:text-white hover:bg-white/5 active:bg-white/10'
                   }`}
                 >
                   {item.label}
@@ -204,11 +204,11 @@ export const Navbar: React.FC = () => {
             })}
           </div>
 
-          <div className="pt-4 mt-3 border-t border-slate-800 flex flex-col space-y-2">
+          <div className="pt-4 mt-3 border-t border-slate-800 flex flex-col space-y-2.5">
             {isPhoneConfigured && phoneUrl && (
               <a
                 href={phoneUrl}
-                className="flex items-center justify-center space-x-2 w-full py-3 rounded-lg bg-gold-gradient text-navy-950 font-semibold text-sm uppercase tracking-wider"
+                className="flex items-center justify-center space-x-2 w-full min-h-[48px] py-3 rounded-xl bg-gold-gradient text-navy-950 font-semibold text-sm uppercase tracking-wider shadow-md shadow-gold-500/20 active:scale-98 transition-transform"
               >
                 <PhoneCall className="w-4 h-4" />
                 <span>Call Now: {businessConfig.phoneNumber}</span>
@@ -217,7 +217,7 @@ export const Navbar: React.FC = () => {
             {businessConfig.secondaryPhoneNumber && (
               <a
                 href={`tel:${businessConfig.secondaryPhoneNumber.replace(/[^0-9+]/g, '')}`}
-                className="flex items-center justify-center space-x-2 w-full py-2.5 rounded-lg bg-navy-900 border border-slate-700 text-slate-200 font-semibold text-xs uppercase tracking-wider hover:bg-navy-800 transition-colors"
+                className="flex items-center justify-center space-x-2 w-full min-h-[44px] py-2.5 rounded-xl bg-navy-900 border border-slate-700 text-slate-200 font-semibold text-xs uppercase tracking-wider hover:bg-navy-800 active:scale-98 transition-colors"
               >
                 <PhoneCall className="w-3.5 h-3.5 text-gold-400" />
                 <span>Call Line 2: {businessConfig.secondaryPhoneNumber}</span>
@@ -228,7 +228,7 @@ export const Navbar: React.FC = () => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-2 w-full py-3 rounded-lg bg-emerald-500 text-navy-950 font-semibold text-sm uppercase tracking-wider"
+                className="flex items-center justify-center space-x-2 w-full min-h-[48px] py-3 rounded-xl bg-emerald-500 text-navy-950 font-semibold text-sm uppercase tracking-wider shadow-md shadow-emerald-500/20 active:scale-98 transition-transform"
               >
                 <MessageSquare className="w-4 h-4 fill-navy-950" />
                 <span>Chat on WhatsApp</span>

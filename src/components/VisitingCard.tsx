@@ -88,10 +88,10 @@ export const VisitingCard: React.FC = () => {
       )}
 
       {/* View Switcher: Official Printed Card vs Digital Card */}
-      <div className="flex items-center justify-center space-x-2 mb-8">
+      <div className="flex flex-col min-[420px]:flex-row items-center justify-center gap-2.5 mb-6 sm:mb-8">
         <button
           onClick={() => setActiveTab('official')}
-          className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+          className={`flex items-center justify-center space-x-2 w-full min-[420px]:w-auto px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all active:scale-95 ${
             activeTab === 'official'
               ? 'bg-gold-gradient text-navy-950 shadow-lg shadow-gold-500/20'
               : 'bg-navy-900/80 text-slate-300 hover:text-white border border-slate-800'
@@ -103,7 +103,7 @@ export const VisitingCard: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('digital')}
-          className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+          className={`flex items-center justify-center space-x-2 w-full min-[420px]:w-auto px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all active:scale-95 ${
             activeTab === 'digital'
               ? 'bg-gold-gradient text-navy-950 shadow-lg shadow-gold-500/20'
               : 'bg-navy-900/80 text-slate-300 hover:text-white border border-slate-800'
@@ -122,7 +122,7 @@ export const VisitingCard: React.FC = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0c0f17] via-[#090b12] to-[#05070a] border-2 border-gold-500/50 p-4 sm:p-8 shadow-2xl shadow-black/90"
+          className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0c0f17] via-[#090b12] to-[#05070a] border-2 border-gold-500/50 p-3.5 sm:p-8 shadow-2xl shadow-black/90"
         >
           {/* Decorative Corner Accents */}
           <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-gold-400 pointer-events-none" />
@@ -195,7 +195,7 @@ export const VisitingCard: React.FC = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0c0f17] via-[#090b12] to-[#05070a] border-2 border-gold-500/50 p-6 sm:p-10 shadow-2xl shadow-black/90"
+          className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0c0f17] via-[#090b12] to-[#05070a] border-2 border-gold-500/50 p-5 sm:p-8 md:p-10 shadow-2xl shadow-black/90"
         >
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             {/* Left: Brand Details */}
@@ -294,7 +294,7 @@ export const VisitingCard: React.FC = () => {
         {isPhoneConfigured && phoneUrl && (
           <a
             href={phoneUrl}
-            className="inline-flex items-center space-x-2 px-5 py-3 rounded-full bg-gold-gradient text-navy-950 font-semibold text-xs sm:text-sm tracking-wide shadow-md shadow-gold-500/20 hover:brightness-110 active:scale-95 transition-all"
+            className="inline-flex items-center justify-center space-x-2 w-full sm:w-auto px-5 py-3 rounded-full bg-gold-gradient text-navy-950 font-semibold text-xs sm:text-sm tracking-wide shadow-md shadow-gold-500/20 hover:brightness-110 active:scale-95 transition-all text-center"
           >
             <Phone className="w-4 h-4" />
             <span>Call {businessConfig.phoneNumber}</span>
@@ -305,7 +305,7 @@ export const VisitingCard: React.FC = () => {
         {businessConfig.secondaryPhoneNumber && secondaryPhoneUrl && (
           <a
             href={secondaryPhoneUrl}
-            className="inline-flex items-center space-x-2 px-5 py-3 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-700 font-semibold text-xs sm:text-sm tracking-wide active:scale-95 transition-all"
+            className="inline-flex items-center justify-center space-x-2 w-full sm:w-auto px-5 py-3 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-700 font-semibold text-xs sm:text-sm tracking-wide active:scale-95 transition-all text-center"
           >
             <Phone className="w-4 h-4 text-gold-400" />
             <span>Call {businessConfig.secondaryPhoneNumber}</span>
@@ -318,7 +318,7 @@ export const VisitingCard: React.FC = () => {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 px-5 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-navy-950 font-semibold text-xs sm:text-sm tracking-wide shadow-md shadow-emerald-500/20 active:scale-95 transition-all"
+            className="inline-flex items-center justify-center space-x-2 w-full sm:w-auto px-5 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-navy-950 font-semibold text-xs sm:text-sm tracking-wide shadow-md shadow-emerald-500/20 active:scale-95 transition-all text-center"
           >
             <MessageSquare className="w-4 h-4" />
             <span>WhatsApp Us</span>
@@ -328,7 +328,7 @@ export const VisitingCard: React.FC = () => {
         {/* 4. Download Visiting Card */}
         <button
           onClick={handleDownloadOfficialCard}
-          className="inline-flex items-center space-x-2 px-5 py-3 rounded-full bg-navy-900 border border-gold-500/40 text-slate-100 hover:text-gold-300 hover:border-gold-400 font-semibold text-xs sm:text-sm tracking-wide shadow-md hover:bg-navy-800 active:scale-95 transition-all"
+          className="inline-flex items-center justify-center space-x-2 w-full sm:w-auto px-5 py-3 rounded-full bg-navy-900 border border-gold-500/40 text-slate-100 hover:text-gold-300 hover:border-gold-400 font-semibold text-xs sm:text-sm tracking-wide shadow-md hover:bg-navy-800 active:scale-95 transition-all text-center"
         >
           <Download className="w-4 h-4 text-gold-400" />
           <span>Download Visiting Card</span>
@@ -337,7 +337,7 @@ export const VisitingCard: React.FC = () => {
         {/* 5. Share Visiting Card */}
         <button
           onClick={handleShare}
-          className="inline-flex items-center space-x-2 px-5 py-3 rounded-full bg-navy-900 border border-slate-700 text-slate-200 hover:text-white hover:border-slate-500 font-semibold text-xs sm:text-sm tracking-wide shadow-md hover:bg-navy-800 active:scale-95 transition-all"
+          className="inline-flex items-center justify-center space-x-2 w-full sm:w-auto px-5 py-3 rounded-full bg-navy-900 border border-slate-700 text-slate-200 hover:text-white hover:border-slate-500 font-semibold text-xs sm:text-sm tracking-wide shadow-md hover:bg-navy-800 active:scale-95 transition-all text-center"
         >
           <Share2 className="w-4 h-4 text-slate-300" />
           <span>Share</span>

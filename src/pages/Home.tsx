@@ -12,7 +12,7 @@ import { WhatsAppButton } from '../components/WhatsAppButton';
 
 export const Home: React.FC = () => {
   return (
-    <div className="relative min-h-screen bg-navy-950 text-slate-100 flex flex-col">
+    <div className="relative min-h-screen bg-navy-950 text-slate-100 flex flex-col w-full max-w-full overflow-x-hidden">
       {/* 1. Navigation Bar */}
       <Navbar />
 
